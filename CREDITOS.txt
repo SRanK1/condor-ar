@@ -1,0 +1,6 @@
+Créditos del modelo 3D
+
+Cabeza, cuello y collar basados en "Cóndor Andino" de monserrathdelsalto (Sketchfab),
+https://sketchfab.com/3d-models/condor-andino-29cda664c07244e980eb4653e41787eb
+bajo licencia Creative Commons Atribución 4.0 (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+Cambios: se extrajo solo la cabeza/cuello, se enderezó, se redujo la geometría y se combinó con cuerpo, alas, cola y animación nuevos.
