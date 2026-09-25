@@ -15,6 +15,7 @@
       letter-spacing:.05em; font-size:18px; text-shadow:0 2px 10px rgba(0,0,0,.6); pointer-events:none; }
     #estado { position:fixed; left:16px; right:16px; top:45%; text-align:center; font-size:16px; text-shadow:0 2px 8px rgba(0,0,0,.8); }
     body.listo #estado:not(.error) { display:none; }
+    #estado.error { background:rgba(0,0,0,.6); padding:12px; border-radius:12px; }
     #toque { position:fixed; left:50%; bottom: max(70px, calc(env(safe-area-inset-bottom) + 56px)); transform:translateX(-50%);
       background:rgba(0,0,0,.55); padding:10px 16px; border-radius:14px; font-size:14px; text-align:center; width:max-content; max-width:88%; }
     .completo { position:fixed; left:50%; bottom: max(18px, env(safe-area-inset-bottom)); transform:translateX(-50%);
