@@ -4,38 +4,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0e1116">
-  <title>Cóndor Holograma AR</title>
+  <title>Cóndor Andino en AR</title>
   <meta name="description" content="Coloca un cóndor andino en 3D en tu espacio real y míralo volar en círculos.">
-  <script type="module" src="../model-viewer.min.js"></script>
+  <script type="module" src="model-viewer.min.js"></script>
   <style>
     :root { --bg:#0e1116; --fg:#f4efe6; --muted:#a8a295; --accent:#e9a23b; --accent-dark:#b87612; }
     * { box-sizing:border-box; }
     html, body { margin:0; height:100%; background:var(--bg); color:var(--fg);
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overflow:hidden; }
-    body { background: radial-gradient(90% 60% at 50% 60%, #0d3a4a 0%, #061820 55%, #02070a 100%); }
-    header p { color:#8fdcef !important; }
-    h1 { color:#aef4ff; text-shadow: 0 0 18px rgba(80,220,255,.7); }
+    body { background: linear-gradient(180deg, #5d7392 0%, #8ea3bd 38%, #c9b79a 72%, #6b5a45 100%); }
+    header p { color:#26303d !important; }
+    h1 { color:#141a22; }
     .app { position:fixed; inset:0; display:flex; flex-direction:column; }
     header { padding: max(20px, env(safe-area-inset-top)) 20px 0; text-align:center; }
     h1 { margin:0; font-size: clamp(22px, 6.5vw, 34px); letter-spacing:.04em; font-weight:800; }
     header p { margin:8px auto 0; max-width:30em; color:var(--muted); font-size:15px; line-height:1.4; }
     model-viewer { flex:1; width:100%; min-height:0; background:transparent;
-      --poster-color: transparent; --progress-bar-color: #5fe6ff; }
+      --poster-color: transparent; --progress-bar-color: var(--accent); }
     .ar-btn { position:absolute; left:50%; bottom: max(26px, env(safe-area-inset-bottom));
       transform:translateX(-50%); border:0; border-radius:999px; padding:18px 28px;
       font-size:17px; font-weight:800; letter-spacing:.06em; color:#1b1206; white-space:nowrap;
-      background: linear-gradient(180deg, #7ff0ff, #25c6e8); box-shadow: 0 0 28px rgba(60,220,255,.55), inset 0 -3px 0 #1491ad;
+      background: linear-gradient(180deg, #f5b857, var(--accent)); box-shadow: 0 10px 30px rgba(233,162,59,.35), inset 0 -3px 0 var(--accent-dark);
       cursor:pointer; }
     .ar-btn:active { transform:translateX(-50%) translateY(2px); }
     .aviso { position:absolute; left:16px; right:16px; bottom: max(26px, env(safe-area-inset-bottom));
-      text-align:center; color:#8fdcef; font-size:15px; line-height:1.4; display:none; }
+      text-align:center; color:#2a241c; font-size:15px; line-height:1.4; display:none; }
     model-viewer[data-sin-ar] .aviso { display:block; }
     .ayuda { position:absolute; left:50%; top:16px; transform:translateX(-50%); max-width:88%;
       background:rgba(14,17,22,.78); color:var(--fg); padding:10px 16px; border-radius:14px;
       font-size:15px; text-align:center; display:none; }
     model-viewer[ar-status="session-started"] .ayuda { display:block; }
     model-viewer[ar-status="object-placed"] .ayuda { display:none; }
-    .creditos { position:absolute; right:10px; bottom:4px; font-size:10px; color:#4f8796; }
+    .creditos { position:absolute; right:10px; bottom:4px; font-size:10px; color:#3f3528; }
     .creditos a { color:inherit; }
     .error { display:none; padding:20px; text-align:center; color:#ffb4a8; }
   </style>
@@ -43,13 +43,13 @@
 <body>
   <div class="app">
     <header>
-      <h1>🦅 TU CÓNDOR HOLOGRÁFICO ESTÁ LISTO</h1>
-      <p>Pulsa el botón, apunta al suelo y coloca el proyector. El holograma del cóndor volará en círculos a su alrededor.</p>
+      <h1>🦅 TU CÓNDOR ESTÁ LISTO</h1>
+      <p>Pulsa el botón, apunta tu cámara hacia el suelo y coloca al cóndor. Luego camina a su alrededor mientras vuela.</p>
     </header>
 
     <model-viewer id="condor"
-      src="condor_holograma.glb"
-      ios-src="condor_holograma.usdz"
+      src="condor.glb"
+      ios-src="condor.usdz"
       alt="Cóndor andino en 3D volando en círculos"
       ar
       ar-modes="webxr scene-viewer quick-look"
@@ -65,13 +65,12 @@
       field-of-view="42deg"
       interpolation-decay="120"
       environment-image="neutral"
-      tone-mapping="neutral"
-      shadow-intensity="0"
+      shadow-intensity="0.8"
       shadow-softness="1"
       exposure="1.05"
       interaction-prompt="none"
       loading="eager">
-      <button slot="ar-button" class="ar-btn">VER HOLOGRAMA EN AR</button>
+      <button slot="ar-button" class="ar-btn">VER EN REALIDAD AUMENTADA</button>
       <div class="ayuda">Mueve el teléfono lentamente apuntando al suelo…</div>
       <div class="aviso">Abre esta página desde tu celular (Android con Chrome o iPhone con Safari) para verlo en realidad aumentada.</div>
       <div class="creditos">Cabeza basada en «Cóndor Andino» de
