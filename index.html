@@ -58,10 +58,10 @@
       autoplay
       camera-controls
       touch-action="pan-y"
-      camera-orbit="94deg 62deg 7.3m"
+      camera-orbit="94deg 62deg 9.7m"
       min-camera-orbit="auto auto 2.5m"
-      max-camera-orbit="auto auto 18m"
-      camera-target="0m -0.2m 0m"
+      max-camera-orbit="auto auto 22m"
+      camera-target="0m 0.2m 0m"
       field-of-view="42deg"
       interpolation-decay="120"
       environment-image="neutral"
@@ -87,7 +87,7 @@
     function acompanar() {
       if (seguir && !mv.paused && mv.getAttribute('ar-status') !== 'session-started' && mv.getAttribute('ar-status') !== 'object-placed') {
         const ang = 90 + 360 * (mv.currentTime % VUELTA) / VUELTA + 4;
-        mv.cameraOrbit = `${ang}deg 62deg 7.3m`;
+        mv.cameraOrbit = `${ang}deg 62deg 9.7m`;
       }
       requestAnimationFrame(acompanar);
     }
