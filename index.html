@@ -58,10 +58,10 @@
       autoplay
       camera-controls
       touch-action="pan-y"
-      camera-orbit="94deg 62deg 5.2m"
+      camera-orbit="94deg 62deg 7.3m"
       min-camera-orbit="auto auto 2.5m"
-      max-camera-orbit="auto auto 14m"
-      camera-target="0m -0.15m 0m"
+      max-camera-orbit="auto auto 18m"
+      camera-target="0m -0.2m 0m"
       field-of-view="42deg"
       interpolation-decay="120"
       environment-image="neutral"
@@ -73,9 +73,6 @@
       <button slot="ar-button" class="ar-btn">VER EN REALIDAD AUMENTADA</button>
       <div class="ayuda">Mueve el teléfono lentamente apuntando al suelo…</div>
       <div class="aviso">Abre esta página desde tu celular (Android con Chrome o iPhone con Safari) para verlo en realidad aumentada.</div>
-      <div class="creditos">Cabeza basada en «Cóndor Andino» de
-        <a href="https://sketchfab.com/3d-models/condor-andino-29cda664c07244e980eb4653e41787eb" target="_blank" rel="noopener">monserrathdelsalto</a>
-        (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>)</div>
     </model-viewer>
     <div class="error" id="error">No se pudo cargar el cóndor. Revisa tu conexión y vuelve a intentarlo.</div>
   </div>
@@ -90,7 +87,7 @@
     function acompanar() {
       if (seguir && !mv.paused && mv.getAttribute('ar-status') !== 'session-started' && mv.getAttribute('ar-status') !== 'object-placed') {
         const ang = 90 + 360 * (mv.currentTime % VUELTA) / VUELTA + 4;
-        mv.cameraOrbit = `${ang}deg 62deg 5.2m`;
+        mv.cameraOrbit = `${ang}deg 62deg 7.3m`;
       }
       requestAnimationFrame(acompanar);
     }
